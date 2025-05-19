@@ -1,47 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Background Responsif Fix</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        .bg-container {
-            width: 100%;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .bg-image {
-            width: 100%;
-            height: 100%;
-            background-image: url('menugambar/1.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-            /* Untuk animasi resize lebih halus */
-            transition: all 0.3s ease;
-        }
-        
-        /* Media Query khusus mobile */
-        @media (max-width: 768px) {
-            .bg-image {
-                background-size: contain;
-                background-color: #000; /* Warna fallback */
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gambar Responsif</title>
+  <style>
+    .gambar-container {
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    .gambar-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px; /* opsional: buat sudut membulat */
+    }
+  </style>
 </head>
 <body>
-    <div class="bg-container">
-        <div class="bg-image"></div>
-    </div>
+
+  <div class="gambar-container">
+    <img src="menugambar/1.jpg" alt="Contoh Gambar">
+  </div>
+
 </body>
 </html>
