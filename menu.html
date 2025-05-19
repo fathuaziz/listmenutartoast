@@ -1,104 +1,47 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Restoran</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Background Responsif Fix</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        .menu-table {
+        
+        .bg-container {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+            position: relative;
         }
-        .menu-table th, .menu-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
+        
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            background-image: url('menugambar/1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            /* Untuk animasi resize lebih halus */
+            transition: all 0.3s ease;
         }
-        .menu-table th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .menu-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        .menu-table tr:hover {
-            background-color: #e9e9e9;
-        }
-        .menu-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        .price {
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        .category {
-            font-style: italic;
-            color: #7f8c8d;
+        
+        /* Media Query khusus mobile */
+        @media (max-width: 768px) {
+            .bg-image {
+                background-size: contain;
+                background-color: #000; /* Warna fallback */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Menu Restoran Kami</h1>
-    
-    <table class="menu-table">
-        <thead>
-            <tr>
-                <th>Gambar</th>
-                <th>Nama Menu</th>
-                <th>Deskripsi</th>
-                <th>Harga</th>
-                <th>Kategori</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="images/nasi_goreng.jpg" alt="Nasi Goreng" class="menu-img"></td>
-                <td>Nasi Goreng Spesial</td>
-                <td>Nasi goreng dengan campuran ayam, udang, dan sayuran</td>
-                <td class="price">Rp 25.000</td>
-                <td class="category">Makanan</td>
-            </tr>
-            <tr>
-                <td><img src="images/es_teh.jpg" alt="Es Teh" class="menu-img"></td>
-                <td>Es Teh Manis</td>
-                <td>Teh dengan gula dan es batu</td>
-                <td class="price">Rp 8.000</td>
-                <td class="category">Minuman</td>
-            </tr>
-            <tr>
-                <td><img src="images/sate_ayam.jpg" alt="Sate Ayam" class="menu-img"></td>
-                <td>Sate Ayam</td>
-                <td>Sate ayam dengan bumbu kacang dan lontong</td>
-                <td class="price">Rp 30.000</td>
-                <td class="category">Makanan</td>
-            </tr>
-            <tr>
-                <td><img src="images/jus_alpukat.jpg" alt="Jus Alpukat" class="menu-img"></td>
-                <td>Jus Alpukat</td>
-                <td>Jus alpukat dengan susu kental manis</td>
-                <td class="price">Rp 15.000</td>
-                <td class="category">Minuman</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p style="text-align: center; margin-top: 20px; color: #7f8c8d;">
-        Silahkan hubungi pelayan untuk pemesanan
-    </p>
+    <div class="bg-container">
+        <div class="bg-image"></div>
+    </div>
 </body>
 </html>
