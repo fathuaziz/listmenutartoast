@@ -3,25 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Tartoast</title>
+  <title>Gambar Responsif</title>
+
   <style>
+    /* Panggil font dari folder lokal */
+    @font-face {
+      font-family: 'AnaKeimDisplay';
+      src: url('menugambar/anakeimdisplayssiitalic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* Background hitam */
+      color: white; /* Teks default putih */
+    }
+
+    header {
+      background-color: #1a1a1a; /* Gelap sedikit beda dari body */
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .row-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .gambar-kiri {
+      flex: 1 1 60%;
+    }
+
+    .gambar-kiri img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .tombol-kanan {
+      flex: 1 1 35%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .tombol-scroll {
+      padding: 10px 20px;
+      background-color: orange; /* Warna tombol oranye */
+      color: black; /* Warna teks tombol hitam untuk kontras */
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: 'AnaKeimDisplay', sans-serif;
+    }
+
+    .tombol-scroll:hover {
+      background-color: darkorange;
+    }
+
     .gambar-container {
       max-width: 100%;
-      padding: 1px;
+      padding: 10px;
     }
 
     .gambar-container img {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 10px; /* opsional: buat sudut membulat */
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
+
+
+  <div class="row-flex">
+    <div class="gambar-kiri">
+      <img src="menugambar/alamat.png" alt="Gambar Ketiga">
+    </div>
+    <div class="tombol-kanan">
+      <button class="tombol-scroll" onclick="document.getElementById('gambar2').scrollIntoView({ behavior: 'smooth' });">
+        ALAMAT KITA
+      </button>
+    </div>
+  </div>
+
   <div class="gambar-container">
-    <img src="menugambar/1.jpg" alt="Contoh Gambar">
+    <img src="menugambar/menu.png" alt="Gambar Pertama">
+  </div>
+
+  <div class="gambar-container" id="gambar2">
+    <img src="menugambar/map.png" alt="Gambar Kedua">
   </div>
 
 </body>
